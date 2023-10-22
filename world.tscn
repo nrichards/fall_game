@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://b085ox7amtmma"]
+[gd_scene load_steps=11 format=3 uid="uid://b085ox7amtmma"]
 
 [ext_resource type="Texture2D" uid="uid://bvo2qphrm0sii" path="res://tree.png" id="1_5jemy"]
 [ext_resource type="Texture2D" uid="uid://l6ovsllg7121" path="res://leaf_blower.png" id="2_2r642"]
 [ext_resource type="Script" path="res://player.gd" id="3_fh4yc"]
 [ext_resource type="Texture2D" uid="uid://f71uesclxgg4" path="res://air_gust.png" id="3_ip5iy"]
+[ext_resource type="AudioStream" uid="uid://ba26w5cxmo3jo" path="res://leaf_blower.wav" id="5_8f0qy"]
 [ext_resource type="PackedScene" uid="uid://brf4ybnyas2rq" path="res://leaf.tscn" id="5_do25o"]
+[ext_resource type="Texture2D" uid="uid://4x05wmmndiy4" path="res://fall.png" id="7_0jjph"]
+[ext_resource type="Script" path="res://fall_fadein.gd" id="8_fpfy5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ock2f"]
 size = Vector2(1628.5, 256)
@@ -23,13 +26,14 @@ texture = ExtResource("1_5jemy")
 [node name="StaticBody2D" type="StaticBody2D" parent="Tree"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tree/StaticBody2D"]
-position = Vector2(-27.933, 346.36)
+position = Vector2(-28.834, 400.045)
 scale = Vector2(0.901066, 0.865899)
 shape = SubResource("RectangleShape2D_ock2f")
 
 [node name="LeafBlower" type="CharacterBody2D" parent="."]
 position = Vector2(92, 403)
 collision_layer = 2
+collision_mask = 2
 script = ExtResource("3_fh4yc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeafBlower"]
@@ -48,10 +52,377 @@ position = Vector2(1000.71, 365.912)
 scale = Vector2(1.87031, 1.87031)
 texture = ExtResource("3_ip5iy")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="LeafBlower"]
+stream = ExtResource("5_8f0qy")
+
 [node name="Leaves" type="Node" parent="."]
 
 [node name="Leaf" parent="Leaves" instance=ExtResource("5_do25o")]
 position = Vector2(252, 141)
+
+[node name="Leaf13" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(279, 208)
+
+[node name="Leaf14" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(404, 253)
+
+[node name="Leaf15" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(343, 41)
+
+[node name="Leaf16" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(415, 169)
+
+[node name="Leaf17" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(320, 231)
+
+[node name="Leaf18" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(280, 160)
+
+[node name="Leaf19" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(262, 310)
+
+[node name="Leaf20" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(278, 264)
+
+[node name="Leaf21" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(254, 232)
+
+[node name="Leaf22" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(240, 169)
+
+[node name="Leaf23" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(249, 106)
+
+[node name="Leaf24" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(470, 46)
+
+[node name="Leaf25" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(516, 83)
+
+[node name="Leaf26" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(550, 11)
+
+[node name="Leaf27" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(532, 55)
+
+[node name="Leaf28" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(566, 72)
+
+[node name="Leaf29" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(549, 107)
+
+[node name="Leaf30" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(574, 106)
+
+[node name="Leaf31" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(604, 15)
+
+[node name="Leaf32" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(537, 28)
+
+[node name="Leaf33" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(626, 82)
+
+[node name="Leaf34" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(650, 13)
+
+[node name="Leaf35" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(683, 69)
+
+[node name="Leaf36" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(658, 68)
+
+[node name="Leaf37" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(648, 99)
+
+[node name="Leaf38" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(606, 112)
+
+[node name="Leaf39" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(610, 201)
+
+[node name="Leaf40" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(647, 131)
+
+[node name="Leaf41" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(686, 158)
+
+[node name="Leaf42" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(731, 119)
+
+[node name="Leaf43" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(736, 87)
+
+[node name="Leaf44" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(773, 62)
+
+[node name="Leaf45" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(807, 48)
+
+[node name="Leaf46" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(779, 99)
+
+[node name="Leaf47" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(760, 130)
+
+[node name="Leaf48" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(791, 150)
+
+[node name="Leaf49" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(824, 131)
+
+[node name="Leaf50" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(857, 144)
+
+[node name="Leaf51" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(890, 161)
+
+[node name="Leaf52" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(884, 200)
+
+[node name="Leaf53" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(854, 187)
+
+[node name="Leaf54" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(804, 180)
+
+[node name="Leaf55" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(765, 205)
+
+[node name="Leaf56" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(733, 216)
+
+[node name="Leaf57" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(698, 203)
+
+[node name="Leaf58" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(694, 118)
+
+[node name="Leaf59" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(608, 155)
+
+[node name="Leaf60" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(566, 159)
+
+[node name="Leaf61" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(536, 187)
+
+[node name="Leaf62" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(503, 194)
+
+[node name="Leaf63" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(452, 146)
+
+[node name="Leaf64" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(462, 89)
+
+[node name="Leaf65" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(449, 96)
+
+[node name="Leaf66" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(512, 38)
+
+[node name="Leaf67" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(406, 13)
+
+[node name="Leaf68" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(378, 24)
+
+[node name="Leaf69" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(378, 60)
+
+[node name="Leaf70" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(365, 104)
+
+[node name="Leaf71" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(396, 134)
+
+[node name="Leaf72" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(416, 56)
+
+[node name="Leaf73" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(316, 87)
+
+[node name="Leaf74" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(309, 124)
+
+[node name="Leaf75" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(326, 146)
+
+[node name="Leaf76" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(313, 180)
+
+[node name="Leaf77" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(305, 23)
+
+[node name="Leaf78" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(282, -23)
+
+[node name="Leaf79" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(280, -3)
+
+[node name="Leaf80" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(330, -13)
+
+[node name="Leaf81" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(393, -8)
+
+[node name="Leaf82" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(415, -33)
+
+[node name="Leaf83" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(612, -10)
+
+[node name="Leaf84" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(619, -38)
+
+[node name="Leaf85" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(601, -51)
+
+[node name="Leaf86" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(592, -29)
+
+[node name="Leaf87" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(347, 236)
+
+[node name="Leaf88" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(380, 212)
+
+[node name="Leaf89" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(366, 216)
+
+[node name="Leaf90" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(441, 164)
+
+[node name="Leaf91" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(383, 107)
+
+[node name="Leaf92" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(393, 88)
+
+[node name="Leaf93" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(352, 75)
+
+[node name="Leaf94" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(342, 126)
+
+[node name="Leaf95" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(379, 178)
+
+[node name="Leaf96" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(451, 118)
+
+[node name="Leaf97" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(485, 65)
+
+[node name="Leaf98" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(440, 65)
+
+[node name="Leaf99" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(616, 131)
+
+[node name="Leaf100" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(730, 149)
+
+[node name="Leaf101" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(760, 159)
+rotation = -2.05924
+
+[node name="Leaf102" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(760, 159)
+rotation = -0.408015
+
+[node name="Leaf103" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(818, 111)
+rotation = -0.408015
+
+[node name="Leaf104" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(638, 212)
+rotation = -0.408015
+
+[node name="Leaf105" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(671, 114)
+rotation = -0.408015
+
+[node name="Leaf106" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(703, 86)
+rotation = 2.26759
+
+[node name="Leaf107" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(747, 40)
+rotation = 5.38724
+
+[node name="Leaf108" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(716, 63)
+rotation = 5.38724
+
+[node name="Leaf109" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(496, 101)
+rotation = 5.38724
+
+[node name="Leaf110" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(419, 88)
+rotation = 5.38724
+
+[node name="Leaf111" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(420, 134)
+rotation = 5.38724
+
+[node name="Leaf112" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(489, 152)
+rotation = 5.38724
+
+[node name="Leaf113" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(318, 40)
+rotation = 5.38724
+
+[node name="Leaf114" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(356, 181)
+rotation = 5.38724
+
+[node name="Leaf115" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(258, 188)
+rotation = 5.38724
+
+[node name="Leaf116" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(435, 248)
+rotation = 5.38724
+
+[node name="Leaf117" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(534, 142)
+rotation = 5.38724
+
+[node name="Leaf118" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(565, 37)
+rotation = 5.38724
+
+[node name="Leaf119" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(572, 125)
+rotation = 5.38724
+
+[node name="Leaf120" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(645, 179)
+rotation = 5.38724
+
+[node name="Leaf121" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(696, 173)
+rotation = 5.38724
+
+[node name="Leaf122" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(769, 174)
+rotation = 5.38724
+
+[node name="Leaf123" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(840, 181)
+rotation = 5.38724
+
+[node name="Leaf124" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(669, 43)
+rotation = 5.38724
+
+[node name="Leaf125" parent="Leaves" instance=ExtResource("5_do25o")]
+position = Vector2(669, 43)
+rotation = 5.38724
 
 [node name="Leaf2" parent="Leaves" instance=ExtResource("5_do25o")]
 position = Vector2(292, 76)
@@ -91,3 +462,17 @@ rotation = -0.21841
 [node name="Leaf8" parent="Leaves" instance=ExtResource("5_do25o")]
 position = Vector2(886, 125)
 rotation = -0.21841
+
+[node name="Fall" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(917, 289)
+scale = Vector2(0.690298, 0.690298)
+texture = ExtResource("7_0jjph")
+script = ExtResource("8_fpfy5")
+
+[node name="Timer" type="Timer" parent="Fall"]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Fall/Timer" to="Fall" method="show_me"]
