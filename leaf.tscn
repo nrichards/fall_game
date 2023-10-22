@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://brf4ybnyas2rq"]
+
+[ext_resource type="Script" path="res://leaf.gd" id="1_uypgo"]
+[ext_resource type="Texture2D" uid="uid://2t260ddfik0q" path="res://leaf.png" id="1_vxn1x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lo78"]
+size = Vector2(24.8171, 19.9222)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_uypgo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.52588e-05, -1.99999)
+scale = Vector2(0.112256, 0.112256)
+texture = ExtResource("1_vxn1x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -6)
+rotation = -0.66509
+shape = SubResource("RectangleShape2D_5lo78")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="on_leaf_start_falling"]
