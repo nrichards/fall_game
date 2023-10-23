@@ -13,19 +13,25 @@ func _ready():
 	
 	
 func _physics_process(delta):
-	if Input.is_action_just_pressed("left_click"):
+	if Input.is_action_pressed("left_click"):
 		click_position = get_global_mouse_position()
 		
 	var target_position = (click_position - position).normalized()
 	
-	if position.distance_to(click_position) > 30:
+	if position.distance_to(click_position) > 15:
 		velocity = target_position * speed
 		move_and_slide()
-		air_gust.visible = true
+		
+		air_gust.is_moving(true)
+	
 		if not audio_stream_player_2d.playing:
 			audio_stream_player_2d.play()
 	else:
-		air_gust.visible = false
-		#look_at(click_position)
+		air_gust.is_moving(false)
+
 		if audio_stream_player_2d.playing:
 			audio_stream_player_2d.stop()
+
+
+func listen_to_physics(body):
+	print("physics did something " , body)
