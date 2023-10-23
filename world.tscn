@@ -491,4 +491,14 @@ rotation = -0.21841
 position = Vector2(886, 125)
 rotation = -0.21841
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color(0.74902, 0.894118, 1, 1)
+offset_left = 994.0
+offset_top = 589.0
+offset_right = 1169.51
+offset_bottom = 659.46
+scale = Vector2(0.8, 0.8)
+text = "Nick Richards
+github.com/nrichards"
+
 [connection signal="timeout" from="Fall/Timer" to="Fall" method="show_me"]
