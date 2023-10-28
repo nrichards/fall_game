@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b085ox7amtmma"]
+[gd_scene load_steps=14 format=3 uid="uid://b085ox7amtmma"]
 
 [ext_resource type="Texture2D" uid="uid://bvo2qphrm0sii" path="res://tree.png" id="1_5jemy"]
 [ext_resource type="Texture2D" uid="uid://l6ovsllg7121" path="res://leaf_blower.png" id="2_2r642"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://4x05wmmndiy4" path="res://fall.png" id="7_0jjph"]
 [ext_resource type="Script" path="res://air_gust.gd" id="7_hnibb"]
 [ext_resource type="Script" path="res://fall_fadein.gd" id="8_fpfy5"]
+[ext_resource type="Script" path="res://leaf_audio.gd" id="9_1f46s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ock2f"]
 size = Vector2(1628.5, 256)
@@ -71,10 +72,9 @@ texture = ExtResource("3_ip5iy")
 script = ExtResource("7_hnibb")
 
 [node name="Area2D" type="Area2D" parent="LeafBlower/LeafBlower/AirGust"]
-gravity_space_override = 1
+gravity_space_override = 2
 gravity_point_center = Vector2(1, -2)
 gravity_direction = Vector2(1, -2)
-linear_damp_space_override = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeafBlower/LeafBlower/AirGust/Area2D"]
 position = Vector2(-211.912, -84.7402)
@@ -82,6 +82,7 @@ shape = SubResource("CircleShape2D_5vx26")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="LeafBlower"]
 stream = ExtResource("5_8f0qy")
+script = ExtResource("9_1f46s")
 
 [node name="Leaves" type="Node" parent="."]
 
